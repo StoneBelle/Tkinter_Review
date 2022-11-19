@@ -13,8 +13,7 @@ def show_chck_value():
 
 style = ttk.Style()
 style.map("TCheckbutton",
-        foreground=[('selected', 'red'), ('alternate', 'green')], statespec='!active'
-          )
+        foreground=[('selected', 'red'), ('alternate', 'green')])
 
 
 for flavour in flavours:
@@ -23,7 +22,7 @@ for flavour in flavours:
         chck_btn = ttk.Checkbutton(root, text=flavour, onvalue="hi", offvalue="bye", command=show_chck_value)
         chck_btn.grid(sticky="W", padx=(50, 0))
         chck_btn.config(state="!on")
-        print(chck_btn.state())        # check the current state of a Checkbutton
+        print(chck_btn.state())        # checks the current state of a Checkbutton
 
 
 
@@ -34,3 +33,5 @@ root.mainloop()
 # every ttk widget has a set of state flags
 # each state is independent from other states & may be set (i.e. turned on) or reset (i.e. turned off)
 # focus, pressed, selected, invalid
+
+# Statespec
