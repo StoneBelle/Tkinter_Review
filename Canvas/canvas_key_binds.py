@@ -1,26 +1,8 @@
-from tkinter import *
-
-
-# VARIABLE CONSTANTS
-WIDTH = 600
-HEIGHT = 400 
-x = WIDTH // 2
-y = HEIGHT // 2
-
-
-# Screen SetUp
-root = Tk()
-root.title("Move Objects within Canvas")
-root.geometry("800x500")
-
-
-# Canvas Setup
 main_canvas = Canvas(root, width=WIDTH, height=HEIGHT, bg="thistle")
 main_canvas.pack(pady=50)
 
 
-# ### MOVING CANVAS OBJECTS ###
-
+### MOVING CANVAS OBJECTS ###
 moving_oval = main_canvas.create_oval(x, y, x + 20, y + 20, fill="beige")
 
 def move_left(event):
@@ -53,9 +35,12 @@ def pressing(event):
    
     if event.char == "c" : 
         main_canvas.itemconfig(moving_oval, fill="beige")
+ 
+## EVENTS & BINDS IN TKINTER ##
+# mainloop() keeps the window open while also updating the program
+# i.e. it runs a event loop that "listens" for events
 
-
-# Binds defined functions to arrow keysr
+# Binds defined functions to arrow keys
 root.bind("<Left>", move_left)
 root.bind("<Right>", move_right)
 root.bind("<Up>", move_up)
